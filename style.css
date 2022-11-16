@@ -16,6 +16,7 @@ body {
     top: 0;
     left: 0;
     bottom: 0;
+    overflow: hidden;
   }
   
 #inner-div {
@@ -56,7 +57,7 @@ p {
     position: absolute;
     font-family: Signik,Arial,sans-serif;
     font-size: 13px;
-    bottom: 1px;
+    bottom: -10px;
     left: 3px;
     margin: 0;
     padding: 0;
@@ -71,31 +72,26 @@ p {
 }
 
 #daily {
-    width: 50%;
+    width: 33%;
     position: relative;
     float: left;
 }
-
-#local {
-    position: relative;
-    margin-top: -10px;
-}
-
 #d-servers {
     position: relative;
-    margin-top: 100px;
+    margin-top: 75px;
 }
 #as-d {
     position: relative;
-    margin-top: 100px;
 }
 #eu-d {
     position: relative;
-    margin-top: 100px;
 }
 #am-d {
     position: relative;
-    margin-top: 100px;
+}
+#tit {
+    position: relative;
+    margin-top: 10px;
 }
 #st {
     position: relative;
@@ -106,8 +102,14 @@ p {
     margin-top: -10px;
 }
 
+#weekly {
+    width: 30%;
+    position: absolute;
+    margin-left: 25%;
+}
+
 #events {
-    width: 50%;
+    width: 33%;
     position: relative;
     float: right;
 }

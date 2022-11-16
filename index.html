@@ -24,13 +24,23 @@
                     </div>
                     <div id="d-servers">
                         <div id="as-d">
-                            <h1>Asia Server</h1>
+                            <h1 id="tit">Asia Server</h1>
                             <h2 id="st">Server time: GMT+8</h2>
-                            <h2 id="sr">Local reset time: <span id='asresult'></span></h2>
-                            <h2 id="local">Your reset time: <span id='localresult'></span></span></h2>
+                            <h2 id="sr">Local reset time: <span id='ASresult'></span></h2>
+                            <h2 id="local">Your reset time: <span id='localresultas'></span></span></h2>
                         </div>
-                        <h1 id="eu-d">Europe Server</h1>
-                        <h1 id="am-d">America Server</h1>
+                        <div id="eu-d">
+                            <h1 id="tit">Europe Server</h1>
+                            <h2 id="st">Server time: GMT+1</h2>
+                            <h2 id="sr">Local reset time: <span id='EUresult'></span></h2>
+                            <h2 id="local">Your reset time: <span id='localresulteu'></span></h2>
+                        </div>
+                        <div id="am-d">
+                            <h1 id="tit">America Server</h1>
+                            <h2 id="st">Server time: GMT-5</h2>
+                            <h2 id="sr">Local reset time: <span id='AMresult'></span></h2>
+                            <h2 id="local">Your reset time: <span id='localresultam'></span></h2>
+                        </div>
                     </div>
                 </div>
 
@@ -39,6 +49,13 @@
                         <h1>Event Timing</h1>
                     </div>
                 </div>
+
+                <div id="weekly">
+                    <div id="w-banner">
+                        <h1>Weekly Reset</h1>
+                    </div>
+                </div>
+
             </div>
             <div id="version">
                 <p>Open Alpha V1.0 (Work in progress)<br>Check KittenzExe's github for progress</p>
@@ -48,9 +65,7 @@
     <script>
         var dt = new Date();
         document.getElementById('date-time').innerHTML=dt;
-        
-        //8pm is 4am gmt+8
-        // 8 Hour diff
+
         //Asia Server Time Code
         const utcGMT8AS = new Date("January 1, 2022 20:00:00");
         let asServer = utcGMT8AS.getHours()+8;
@@ -58,41 +73,79 @@
         var asServerF = asServer2;
         console.log(asServerF);
         var decimalTimeString = asServerF;
-        var n = new Date(0,0);
-        n.setMinutes(+decimalTimeString * 60);
-        var ASresult = n.toTimeString().slice(0, 5);
+        var s = new Date(0,0);
+        s.setMinutes(+decimalTimeString * 60);
+        var ASresult = s.toTimeString().slice(0, 5);
         console.log(ASresult);
-        document.getElementById('asresult').innerHTML=ASresult;
+        document.getElementById('ASresult').innerHTML=ASresult;
 
+        //Europe Server Time Code
+        const utcGMT1EU = new Date("January 1, 2022 03:00:00");
+        let euServer = utcGMT1EU.getHours()+1;
+        let euServer2 = euServer - 24;
+        var euServerF = euServer2;
+        console.log(euServerF);
+        var decimalTimeString = euServerF;
+        var e = new Date(0,0);
+        e.setMinutes(+decimalTimeString * 60);
+        var EUresult = e.toTimeString().slice(0, 5);
+        console.log(EUresult);
+        document.getElementById('EUresult').innerHTML=EUresult;
+
+        //America Server Time Code
+        const utcGMT5AM = new Date("January 1, 2022 09:00:00");
+        let amServer = utcGMT5AM.getHours()-5;
+        let amServer2 = amServer - 24;
+        var amServerF = amServer2;
+        console.log(amServerF);
+        var decimalTimeString = amServerF;
+        var a = new Date(0,0);
+        a.setMinutes(+decimalTimeString * 60);
+        var AMresult = a.toTimeString().slice(0, 5);
+        console.log(AMresult);
+        document.getElementById('AMresult').innerHTML=AMresult;
 
 
         //Local Time Code
-        as0 = new Date().getTimezoneOffset();
-        console.log(as0)
-        as00 = as0 / -60 //convert to hour difference
-        console.log(as00)
+        client0 = new Date().getTimezoneOffset();
+        console.log(client0)
+        client00 = client0 / -60 //convert to hour difference
+        console.log(client00)
 
-        let asLocal = utcGMT8AS.getHours()+as00;
+        //Local Time Code AS
+        let asLocal = utcGMT8AS.getHours()+client00;
         let asLocal2 = asLocal - 24;
         var asLocalF = asLocal2;
         console.log(asLocalF)
         var decimalTimeString = asLocalF;
         var n = new Date(0,0);
         n.setMinutes(+decimalTimeString * 60);
-        var Localresult = n.toTimeString().slice(0, 5);
-        console.log(Localresult);
-        document.getElementById('localresult').innerHTML=Localresult;
+        var LocalresultAS = n.toTimeString().slice(0, 5);
+        console.log(LocalresultAS);
+        document.getElementById('localresultas').innerHTML=LocalresultAS;
 
-        var Tcode = "time"
-        if (asServer2 < 12) {
-            Tcode = "am";
-        } else {
-            Tcode = "pm";
-        }
-        console.log(Tcode)
-        document.getElementById('tcode').innerHTML=Tcode;
-        document.getElementById('tcode2').innerHTML=Tcode;
+        //Local Time Code EU
+        let euLocal = utcGMT1EU.getHours()+client00;
+        let euLocal2 = euLocal - 24;
+        var euLocalF = euLocal2;
+        console.log(euLocalF)
+        var decimalTimeString = euLocalF;
+        var m = new Date(0,0);
+        m.setMinutes(+decimalTimeString * 60);
+        var LocalresultEU = m.toTimeString().slice(0, 5);
+        console.log(LocalresultEU);
+        document.getElementById('localresulteu').innerHTML=LocalresultEU;
 
-
+        //Local Time Code EU
+        let amLocal = utcGMT5AM.getHours()+client00;
+        let amLocal2 = amLocal - 24;
+        var amLocalF = amLocal2;
+        console.log(amLocalF)
+        var decimalTimeString = amLocalF;
+        var o = new Date(0,0);
+        o.setMinutes(+decimalTimeString * 60);
+        var LocalresultAM = o.toTimeString().slice(0, 5);
+        console.log(LocalresultAM);
+        document.getElementById('localresultam').innerHTML=LocalresultAM;
     </script>
 </html>
