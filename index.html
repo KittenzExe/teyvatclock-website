@@ -51,7 +51,7 @@
         
         //8pm is 4am gmt+8
         // 8 Hour diff
-        //Asia Server Time
+        //Asia Server Time Code
         const utcGMT8AS = new Date("January 1, 2022 20:00:00");
         let asServer = utcGMT8AS.getHours()+8;
         let asServer2 = asServer - 24;
@@ -64,6 +64,9 @@
         console.log(ASresult);
         document.getElementById('asresult').innerHTML=ASresult;
 
+
+
+        //Local Time Code
         as0 = new Date().getTimezoneOffset();
         console.log(as0)
         as00 = as0 / -60 //convert to hour difference
