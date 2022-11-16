@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Signik:bold);
 
+body {
+    font-family: Signik,Arial,sans-serif;
+}
+
 #outer-div {
     width: 100%;
     height: 100%;
