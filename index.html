@@ -3,7 +3,23 @@
 <html>
     <body>
         <div id="outer-div">
-            <div id="inner-div"></div>
+            <div id="inner-div">
+                <div id="Head">
+                    <h1>Teyvat Clock</h1>
+                    <h2>Your 1 website for all times in Teyvat</h2>
+                </div>
+
+                <div id="user-time">
+                    <p>Your local date and time is <span id='date-time'></span>.</p>
+                </div>
+            </div>
+            <div id="version">
+                <p>Open Alpha V1.0 (Work in progress)<br>Check KittenzExe's github for progress</p>
+            </div>
         </div>
     </body>
+    <script>
+        var dt = new Date();
+        document.getElementById('date-time').innerHTML=dt;
+    </script>
 </html>
