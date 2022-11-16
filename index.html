@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="style.css" meta charset='utf-8'>
+<title>Teyvat Clock</title>
 <html>
     <body>
         <div id="outer-div">
@@ -12,6 +13,28 @@
                 <div id="user-time">
                     <p>Your local date and time is <span id='date-time'></span>.</p>
                 </div>
+
+                <div id="daily">
+                    <div id="d-banner">
+                        <h1>Daily Reset</h1>
+                    </div>
+                    <div id="d-servers">
+                        <div id="as-d">
+                            <h1>Asia Server</h1>
+                            <h2 id="st">Server time: GMT+8</h2>
+                            <h2 id="sr">Local reset time: <span id='as-server'></span><span id='tcode'></span></h2>
+                            <h2 id="local">Your reset time: <span id='as-local'></span><span id='tcode2'></span></h2>
+                        </div>
+                        <h1 id="eu-d">Europe Server</h1>
+                        <h1 id="am-d">America Server</h1>
+                    </div>
+                </div>
+
+                <div id="events">
+                    <div id="e-banner">
+                        <h1>Event Timing</h1>
+                    </div>
+                </div>
             </div>
             <div id="version">
                 <p>Open Alpha V1.0 (Work in progress)<br>Check KittenzExe's github for progress</p>
@@ -21,5 +44,38 @@
     <script>
         var dt = new Date();
         document.getElementById('date-time').innerHTML=dt;
+        
+        //8pm is 4am gmt+8
+        // 8 Hour diff
+        //Asia Server Time
+        const utcGMT8AS = new Date("January 1, 2022 20:00:00");
+        let asServer = utcGMT8AS.getHours()+8;
+        let asServer2 = asServer - 24;
+        var asServerF = asServer2;
+        console.log(asServerF);
+        document.getElementById('as-server').innerHTML=asServerF;
+
+        as0 = new Date().getTimezoneOffset();
+        console.log(as0)
+        as00 = as0 / -60 //convert to hour difference
+        console.log(as00)
+
+        let asLocal = utcGMT8AS.getHours()+as00;
+        let asLocal2 = asLocal - 24;
+        var asLocalF = asLocal2;
+        console.log(asLocalF)
+        document.getElementById('as-local').innerHTML=asLocalF;
+
+        var Tcode = "time"
+        if (asServer2 < 12) {
+            Tcode = "am";
+        } else {
+            Tcode = "pm";
+        }
+        console.log(Tcode)
+        document.getElementById('tcode').innerHTML=Tcode;
+        document.getElementById('tcode2').innerHTML=Tcode;
+
+
     </script>
 </html>

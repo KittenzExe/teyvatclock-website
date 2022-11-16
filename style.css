@@ -65,3 +65,40 @@ p {
     padding: 0;
     margin: 0;
 }
+
+#daily {
+    width: 50%;
+    position: relative;
+    float: left;
+}
+
+#d-servers {
+    position: relative;
+    margin-top: 100px;
+}
+#as-d {
+    position: relative;
+    margin-top: 100px;
+}
+#eu-d {
+    position: relative;
+    margin-top: 100px;
+}
+#am-d {
+    position: relative;
+    margin-top: 100px;
+}
+#st {
+    position: relative;
+    margin-top: 60px;
+}
+#sr {
+    position: relative;
+    margin-top: -30px;
+}
+
+#events {
+    width: 50%;
+    position: relative;
+    float: right;
+}
