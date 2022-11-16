@@ -72,6 +72,11 @@ p {
     float: left;
 }
 
+#local {
+    position: relative;
+    margin-top: -30px;
+}
+
 #d-servers {
     position: relative;
     margin-top: 100px;

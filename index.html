@@ -22,8 +22,8 @@
                         <div id="as-d">
                             <h1>Asia Server</h1>
                             <h2 id="st">Server time: GMT+8</h2>
-                            <h2 id="sr">Local reset time: <span id='as-server'></span><span id='tcode'></span></h2>
-                            <h2 id="local">Your reset time: <span id='as-local'></span><span id='tcode2'></span></h2>
+                            <h2 id="sr">Local reset time: <span id='asresult'></span></h2>
+                            <h2 id="local">Your reset time: <span id='localresult'></span></span></h2>
                         </div>
                         <h1 id="eu-d">Europe Server</h1>
                         <h1 id="am-d">America Server</h1>
@@ -53,7 +53,12 @@
         let asServer2 = asServer - 24;
         var asServerF = asServer2;
         console.log(asServerF);
-        document.getElementById('as-server').innerHTML=asServerF;
+        var decimalTimeString = asServerF;
+        var n = new Date(0,0);
+        n.setMinutes(+decimalTimeString * 60);
+        var ASresult = n.toTimeString().slice(0, 5);
+        console.log(ASresult);
+        document.getElementById('asresult').innerHTML=ASresult;
 
         as0 = new Date().getTimezoneOffset();
         console.log(as0)
@@ -64,7 +69,12 @@
         let asLocal2 = asLocal - 24;
         var asLocalF = asLocal2;
         console.log(asLocalF)
-        document.getElementById('as-local').innerHTML=asLocalF;
+        var decimalTimeString = asLocalF;
+        var n = new Date(0,0);
+        n.setMinutes(+decimalTimeString * 60);
+        var Localresult = n.toTimeString().slice(0, 5);
+        console.log(Localresult);
+        document.getElementById('localresult').innerHTML=Localresult;
 
         var Tcode = "time"
         if (asServer2 < 12) {
