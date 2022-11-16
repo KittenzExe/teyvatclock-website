@@ -29,13 +29,13 @@
     opacity: 100%;
     color: black;
     font-family: Signik,Arial,sans-serif;
-    font-weight: bold;
     font-size: 40px;
+    position: relative;
 }
 
 h1 {
     padding: 0px;
-    margin-bottom: -70px;
+    margin-bottom: -60px;
 }
 
 h2 {
