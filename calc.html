@@ -97,6 +97,26 @@
         var AMBERlv20A0ATK = 48
         var AMBERlv20A0DEF = 129
 
+        var AMBERlv20A1HP = 2630
+        var AMBERlv20A1ATK = 62
+        var AMBERlv20A1DEF = 166
+
+        var AMBERlv40A1HP = 3940
+        var AMBERlv40A1ATK = 92
+        var AMBERlv40A1DEF = 250
+
+        var AMBERlv40A2HP = 4361
+        var AMBERlv40A2ATK = 102
+        var AMBERlv40A2DEF = 276
+
+        var AMBERlv50A2HP = 5016
+        var AMBERlv50A2ATK = 118
+        var AMBERlv50A2DEF = 318
+
+        var AMBERlv50A3HP = 5577
+        var AMBERlv50A3ATK = 131
+        var AMBERlv50A3DEF = 354
+
 
         var character = document.getElementById("Character").value;
         console.log(character)
@@ -106,17 +126,47 @@
         console.log(ascension)
 
         if (character = "amber") {
-            if (level = 1) {
-                if (asscention <= 0) {
-                    var BaseOutputHP = AMBERlv1A0HP
-                    var BaseOutputATK = AMBERlv1A0ATK
-                    var BaseOutputDEF = AMBERlv1A0DEF
-                    document.getElementById('BaseHP').innerHTML=BaseOutputHP;
-                    document.getElementById('BaseATK').innerHTML=BaseOutputATK;
-                    document.getElementById('BaseDEF').innerHTML=BaseOutputDEF;
-                    console.log(BaseOutputHP)
-                    console.log(BaseOutputATK)
-                    console.log(BaseOutputDEF)
+            if (level >= 1) {
+                if (ascension <= 0) {
+                    document.getElementById('BaseHP').innerHTML=AMBERlv1A0HP;
+                    document.getElementById('BaseATK').innerHTML=AMBERlv1A0ATK;
+                    document.getElementById('BaseDEF').innerHTML=AMBERlv1A0DEF;
+                }
+            }
+            if (level >= 20) {
+                if (ascension >= 0) {
+                    document.getElementById('BaseHP').innerHTML=AMBERlv20A0HP;
+                    document.getElementById('BaseATK').innerHTML=AMBERlv20A0ATK;
+                    document.getElementById('BaseDEF').innerHTML=AMBERlv20A0DEF;
+                }
+                if (ascension >= 1) {
+                    document.getElementById('BaseHP').innerHTML=AMBERlv20A1HP;
+                    document.getElementById('BaseATK').innerHTML=AMBERlv20A1ATK;
+                    document.getElementById('BaseDEF').innerHTML=AMBERlv20A1DEF;
+                }
+            }
+            if (level >= 40) {
+                if (ascension >= 1) {
+                    document.getElementById('BaseHP').innerHTML=AMBERlv40A1HP;
+                    document.getElementById('BaseATK').innerHTML=AMBERlv40A1ATK;
+                    document.getElementById('BaseDEF').innerHTML=AMBERlv40A1DEF;
+                }
+                if (ascension >= 2) {
+                        document.getElementById('BaseHP').innerHTML=AMBERlv40A2HP;
+                        document.getElementById('BaseATK').innerHTML=AMBERlv40A2ATK;
+                        document.getElementById('BaseDEF').innerHTML=AMBERlv40A2DEF;
+                }
+            }
+            if (level >= 50) {
+                if (ascension >= 2) {
+                    document.getElementById('BaseHP').innerHTML=AMBERlv50A2HP;
+                    document.getElementById('BaseATK').innerHTML=AMBERlv50A2ATK;
+                    document.getElementById('BaseDEF').innerHTML=AMBERlv50A2DEF;
+                }
+                if (ascension >= 3) {
+                        document.getElementById('BaseHP').innerHTML=AMBERlv50A3HP;
+                        document.getElementById('BaseATK').innerHTML=AMBERlv50A3ATK;
+                        document.getElementById('BaseDEF').innerHTML=AMBERlv50A3DEF;
                 }
             }
         }
