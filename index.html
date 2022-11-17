@@ -54,6 +54,26 @@
                     <div id="w-banner">
                         <h1>Weekly Reset</h1>
                     </div>
+                    <div id="d-servers">
+                        <div id="as-d">
+                            <h1 id="tit">Asia Server</h1>
+                            <h2 id="st">Server time: Monday GMT+8</h2>
+                            <h2 id="sr">Local weekly reset time (Monday): <span id='ASresultW'></span></h2>
+                            <h2 id="local">Your weekly reset time (Monday): <span id='localresultasw'></span></span></h2>
+                        </div>
+                        <div id="eu-d">
+                            <h1 id="tit">Europe Server</h1>
+                            <h2 id="st">Server time: GMT+1</h2>
+                            <h2 id="sr">Local weekly reset time (Monday): <span id='EUresultW'></span></h2>
+                            <h2 id="local">Your weekly reset time (Monday): <span id='localresulteuw'></span></h2>
+                        </div>
+                        <div id="am-d">
+                            <h1 id="tit">America Server</h1>
+                            <h2 id="st">Server time: GMT-5</h2>
+                            <h2 id="sr">Local weekly reset time (Monday): <span id='AMresultW'></span></h2>
+                            <h2 id="local">Your weekly reset time (Monday): <span id='localresultamw'></span></h2>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -136,7 +156,7 @@
         console.log(LocalresultEU);
         document.getElementById('localresulteu').innerHTML=LocalresultEU;
 
-        //Local Time Code EU
+        //Local Time Code AM
         let amLocal = utcGMT5AM.getHours()+client00;
         let amLocal2 = amLocal - 24;
         var amLocalF = amLocal2;
