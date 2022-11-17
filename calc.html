@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css" meta charset='utf-8'>
+<title>Teyvat Clock</title>
+<html>
+    <form id="frm1" action="Calculate.html">
+        <table width="350px" border="1px">
+            <tr>
+                <th colspan="4">Character Output Calculator</th>
+            </tr>
+            <tr>
+                <td>Character</td>
+                <td>
+                    <select id="Character" name="Character">
+                        <option id="Amber">Amber</option>
+                        <option id="Barbara">Barbara</option>
+                        <option id="Sucrose">Sucrose</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="Level" name="Level">
+                        <option id="1" value="1">Level 1</option>
+                        <option id="20" value="20">Level 20</option>
+                        <option id="40" value="40">Level 40</option>
+                        <option id="50" value="50">Level 50</option>
+                        <option id="60" value="60">Level 60</option>
+                        <option id="70" value="70">Level 70</option>
+                        <option id="80" value="80">Level 80</option>
+                        <option id="90" value="90">Level 90</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="Asscention" name="Asscention">
+                        <option id="0" value="0">Level 0 Asscention</option>
+                        <option id="1" value="1">Level 1 Asscention</option>
+                        <option id="2" value="2">Level 2 Asscention</option>
+                        <option id="3" value="3">Level 3 Asscention</option>
+                        <option id="4" value="4">Level 4 Asscention</option>
+                        <option id="5" value="5">Level 5 Asscention</option>
+                        <option id="6" value="6">Level 6 Asscention</option>
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Breaks</td>
+                <td>
+                    <input type="number" id="Breaks" placeholder="0">minutes</td>
+            </tr>
+            <tr>
+                <td>Malfunctions</td>
+                <td>
+                    <input type="number" id="Malfunctions" placeholder="0">minutes</td>
+            </tr>
+            <tr>
+                <td>Theoretical production time:</td>
+                <td>
+                    <p id="test"></p>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td>Stats</td>
+                <td>
+                    <p>Base HP</p>
+                </td>
+                <td>
+                    <p>Base ATK</p>
+                </td>
+                <td>
+                    <p>Base DEF</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Stats</td>
+                <td>
+                    <span id='BaseHP'></span>
+                </td>
+                <td>
+                    <span id='BaseATK'></span>
+                </td>
+                <td>
+                    <span id='BaseDEF'></span>
+                </td>
+            </tr>
+        </table>
+        <button onClick="window.location.reload();">Refresh Page</button>
+    </form>
+    <script>
+        //Character Bases
+        //AMBER
+        var AMBERlv1A0HP = 793
+        var AMBERlv1A0ATK = 18
+        var AMBERlv1A0DEF = 50
+
+        var AMBERlv20A0HP = 2037
+        var AMBERlv20A0ATK = 48
+        var AMBERlv20A0DEF = 129
+
+
+        var character = document.getElementById("Character").value;
+        console.log(character)
+        var level = document.getElementById("Level").value;
+        console.log(level)
+        var asscention = document.getElementById("Asscention").value;
+        console.log(asscention)
+
+        if (character = "amber") {
+            if (level = 1) {
+                if (asscention <= 0) {
+                    var BaseOutputHP = AMBERlv1A0HP
+                    var BaseOutputATK = AMBERlv1A0ATK
+                    var BaseOutputDEF = AMBERlv1A0DEF
+                    document.getElementById('BaseHP').innerHTML=BaseOutputHP;
+                    document.getElementById('BaseATK').innerHTML=BaseOutputATK;
+                    document.getElementById('BaseDEF').innerHTML=BaseOutputDEF;
+                    console.log(BaseOutputHP)
+                    console.log(BaseOutputATK)
+                    console.log(BaseOutputDEF)
+                }
+            }
+        }
+
+
+
+    </script>
+</html>
