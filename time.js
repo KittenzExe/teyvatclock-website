@@ -44,7 +44,7 @@ document.getElementById('AMresult').innerHTML=AMresult;
 //Local Time Code
 client0 = new Date().getTimezoneOffset();
 console.log(client0)
-client00 = client0 / -60 //convert to hour difference
+client00 = client0 / -60 //convert to hour difference pogU
 console.log(client00)
 
 //Local Time Code AS
@@ -71,7 +71,7 @@ var LocalresultEU = m.toTimeString().slice(0, 5);
 console.log(LocalresultEU);
 document.getElementById('localresulteu').innerHTML=LocalresultEU;
 
-//Local Time Code EU
+//Local Time Code AM
 let amLocal = utcGMT5AM.getHours()+client00;
 let amLocal2 = amLocal - 24;
 var amLocalF = amLocal2;
